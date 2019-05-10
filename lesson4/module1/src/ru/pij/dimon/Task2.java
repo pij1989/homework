@@ -21,6 +21,10 @@ public class Task2 {
             String e = scanner.nextLine();
             System.out.println("Enter width plot ");
             String f = scanner.nextLine();
+            if (a.equals("0") || b.equals("0") || c.equals("0") || d.equals("0") || e.equals("0") || f.equals("0")){
+                System.out.println("One of the entered element is zero, please try again" );
+                continue;
+            }
             int lenghtFirstHouse = 0;
             int widthFirstHouse = 0;
             int lenghtSecondHouse = 0;

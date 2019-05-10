@@ -8,7 +8,7 @@ public class Task3 {
         System.out.println("Enter number ");
         String number = scanner.nextLine();
         int n = 0;
-        int factorial = 1;
+        long factorial = 1;
         int count = 1;
         try {
             n = Integer.parseInt(number);
