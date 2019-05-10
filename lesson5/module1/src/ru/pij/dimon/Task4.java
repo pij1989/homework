@@ -1,6 +1,5 @@
 package ru.pij.dimon;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Task4 {
@@ -10,6 +9,12 @@ public class Task4 {
             System.out.println("Enter integer number");
             String number = scanner.nextLine();
             if (number.equals("exit")) System.exit(0);
+            try{
+                Long.parseLong(number);
+            }catch (NumberFormatException e){
+                System.out.println("Error format. Try again");
+                continue;
+            }
             if (number.length()>3){
                 System.out.println("Number is "+ new String(splitNumber(number)));
             }else {

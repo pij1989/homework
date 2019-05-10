@@ -15,7 +15,7 @@ public class Task2 {
             int sum = 0;
             if (checkNumber(arrayNumber)) {
                 for (int i = 0; i < arrayNumber.length; i++) {
-                    if ((int) arrayNumber[i] != 46) {
+                    if ((int) arrayNumber[i] != 46 && (int) arrayNumber[i] != 45) {
                         sum = sum + (int) arrayNumber[i] - 48;
                     }
                 }
@@ -33,7 +33,7 @@ public class Task2 {
         }
         for (int i = 0; i < arrayNumber.length; i++) {
             if ((int) arrayNumber[i] == 46) countSeparate++;
-            if (((int) arrayNumber[i] < 48 || (int) arrayNumber[i] > 57) && (int) arrayNumber[i] != 46) {
+            if (((int) arrayNumber[i] < 48 || (int) arrayNumber[i] > 57) && (int) arrayNumber[i] != 46 && (int) arrayNumber[i] != 45) {
                 System.out.println("Error, please enter correct number");
                 return false;
             } else {
