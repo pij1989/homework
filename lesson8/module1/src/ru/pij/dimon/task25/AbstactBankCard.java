@@ -1,6 +1,6 @@
 package ru.pij.dimon.task25;
 
-public abstract class AbstactBankCard implements BankCard {
+public abstract class AbstactBankCard implements Payable {
     private String cardHolderName;
     private String paymentSystem;
     private String cardNumber;

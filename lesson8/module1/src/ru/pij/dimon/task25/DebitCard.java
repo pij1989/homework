@@ -1,6 +1,6 @@
 package ru.pij.dimon.task25;
 
-public class DebitCard extends AbstactBankCard{
+public class DebitCard extends AbstactBankCard {
 
     private int balance;
 

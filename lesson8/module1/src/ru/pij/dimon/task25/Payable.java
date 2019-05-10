@@ -1,6 +1,6 @@
 package ru.pij.dimon.task25;
 
-public interface BankCard {
+public interface Payable {
     void topUpCard(int money);
 
     void checkBalance();
