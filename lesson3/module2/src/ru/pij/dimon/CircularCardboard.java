@@ -19,16 +19,24 @@ public class CircularCardboard {
         "Invalid number format" "Try again enter correctly date"
          */
         if (checkValid(a)&&checkValid(b)&&checkValid(r)){
-            double diagonalRectangle = getDiagonalRectangle(Double.parseDouble(a),Double.parseDouble(b));
-            double diametrCircle = 2*Double.parseDouble(r);
-            if( diagonalRectangle <= diametrCircle){
-                System.out.println("You can close rectangle hole with circular cardboard completly");
-            }else {
-                System.out.println("You can not close rectangle hole with circular cardboard completly");
+            double lenght = Double.parseDouble(a);
+            double width = Double.parseDouble(b);
+            double radius = Double.parseDouble(r);
+            if(lenght == 0 || width == 0 || radius == 0){
+                System.out.println("Error.One of the element is zero");
+                System.out.println("Try again enter correctly data");
+            } else {
+                double diagonalRectangle = getDiagonalRectangle(lenght,width);
+                double diametrCircle = 2*radius;
+                if( diagonalRectangle <= diametrCircle){
+                    System.out.println("You can close rectangle hole with circular cardboard completly");
+                }else {
+                    System.out.println("You can not close rectangle hole with circular cardboard completly");
+                }
             }
         } else {
             System.out.println("Invalid number format");
-            System.out.println("Try again enter correctly date");
+            System.out.println("Try again enter correctly data");
         }
 
     }
