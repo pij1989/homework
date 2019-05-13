@@ -19,11 +19,16 @@ public class Task33 {
                     System.out.println("Enter pathname directory:");
                     File file = new File(scanner.nextLine());
                     File[] files = file.listFiles();
+                    if (files == null){
+                        System.out.println("Error");
+                        return;}
                     for (File file1:files){
-                        if(file1.isDirectory()){
-                            directoryList.add(file1);
-                        }else {
-                            filesList.add(file1);
+                        if (file1 != null) {
+                            if (file1.isDirectory()) {
+                                directoryList.add(file1);
+                            } else {
+                                filesList.add(file1);
+                            }
                         }
                     }
                     System.out.println("Directory: ");
