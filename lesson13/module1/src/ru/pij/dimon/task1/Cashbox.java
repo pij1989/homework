@@ -1,5 +1,8 @@
 package ru.pij.dimon.task1;
 
+import java.util.Map;
+
+
 public class Cashbox implements Comparable<Cashbox> {
     private int cashboxNumber;
     private int countConsumerInQueue = 0;
@@ -8,12 +11,13 @@ public class Cashbox implements Comparable<Cashbox> {
         this.cashboxNumber = cashboxNumber;
     }
 
-    synchronized public void serveConsumer(int products){
+     public void serveConsumer(Map<Product,Integer> basketProducts){
         try {
             String name = Thread.currentThread().getName();
             System.out.println("Consumer "+ name+" occupied cashbox " + cashboxNumber);
-            for(int i=1;i<=products;i++){
-                System.out.println("--- Consumer: "+name+" product: "+i+" cashbox: "+cashboxNumber);
+            if(basketProducts == null){return;}
+            for(Product product:basketProducts.keySet()){
+                System.out.println("--- Consumer: "+name+" product: "+product+ " amount:"+basketProducts.get(product)+" cashbox: "+cashboxNumber);
                 Thread.sleep(2000);
             }
             Thread.sleep(3000);
@@ -29,6 +33,7 @@ public class Cashbox implements Comparable<Cashbox> {
     public void decrementCountConsumerInQueue() {
         countConsumerInQueue--;
     }
+
 
     public int getCountConsumerInQueue() {
         return countConsumerInQueue;
